@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAULTLINE — The Room That Lies</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-phase="DORMANT" data-xr="0">
+<canvas id="scene" aria-label="FAULTLINE scene"></canvas>
+<header>
+  <h1>FAULTLINE</h1>
+  <p class="sub">The Room That Lies</p>
+  <p id="mode" class="mode">Checking this device…</p>
+</header>
+<main>
+  <div class="actions">
+    <button id="enter" class="primary" hidden>Enter mixed reality</button>
+    <button id="begin">Play on this screen</button>
+  </div>
+  <p id="runtime-note" class="note"></p>
+</main>
+<footer>
+  <div class="status"><strong id="phase">DORMANT</strong> <span id="progress"></span></div>
+  <div class="tools">
+    <button id="palm" title="Hold: open palm (or hold F)">✋ Hold palm</button>
+    <button id="autoplay" title="Scripted virtual hands play the whole experience">Auto-play</button>
+    <span id="autoplay-step"></span>
+    <button id="record">Session record</button>
+    <button id="reset">Reset</button>
+  </div>
+</footer>
+<script type="module" src="build/app.js"></script>
+</body>
+</html>

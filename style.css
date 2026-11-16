@@ -1,0 +1,31 @@
+:root { color-scheme: dark; --ink: #e8eef7; --dim: #93a0b4; --accent: #39a0ff; --gold: #ffc94d; }
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0b0d12; color: var(--ink); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; overflow: hidden; }
+#scene { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+#scene:active { cursor: grabbing; }
+header, main, footer { position: fixed; left: 0; right: 0; pointer-events: none; padding: 0 20px; }
+header { top: 14px; text-align: center; }
+h1 { margin: 0; font-size: 26px; letter-spacing: .32em; font-weight: 700; text-indent: .32em; }
+.sub { margin: 2px 0 0; color: var(--dim); letter-spacing: .28em; text-transform: uppercase; font-size: 11px; }
+.mode { margin: 8px 0 0; font-size: 12px; color: var(--gold); }
+main { top: 50%; transform: translateY(-50%); text-align: center; }
+.actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.note { max-width: 560px; margin: 14px auto 0; color: var(--dim); font-size: 13px; text-shadow: 0 1px 6px #000; }
+button { pointer-events: auto; font: inherit; color: var(--ink); background: rgba(20, 26, 38, .82); border: 1px solid #2c3a52; border-radius: 999px; padding: 9px 16px; cursor: pointer; user-select: none; -webkit-user-select: none; touch-action: none; }
+button:hover { border-color: var(--accent); }
+button:disabled { opacity: .45; cursor: default; }
+button.primary { background: var(--accent); border-color: var(--accent); color: #04121f; font-weight: 700; padding: 13px 26px; font-size: 16px; }
+footer { bottom: 12px; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+.status { font-size: 12px; color: var(--dim); text-shadow: 0 1px 6px #000; }
+.status strong { color: var(--ink); letter-spacing: .08em; }
+.tools { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.tools button { padding: 6px 12px; font-size: 12px; }
+#autoplay-step { font-size: 12px; color: var(--gold); min-width: 0; }
+/* Once playing, the page gets out of the way; in a session the canvas is all there is. */
+body:not([data-phase="DORMANT"]) main .actions #begin { display: none; }
+body:not([data-phase="DORMANT"]) main { top: 96px; transform: none; }
+body:not([data-phase="DORMANT"]) .note { font-size: 12px; opacity: .8; }
+body[data-xr="1"] main, body[data-xr="1"] header { display: none; }
+@media (max-width: 640px) { h1 { font-size: 20px; } footer { justify-content: center; } }
+/* ?clean=1 hides the 2D overlay for screen recordings. */
+body[data-clean="1"] header, body[data-clean="1"] main, body[data-clean="1"] footer { display: none; }
