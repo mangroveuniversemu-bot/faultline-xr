@@ -29,3 +29,7 @@ body[data-xr="1"] main, body[data-xr="1"] header { display: none; }
 @media (max-width: 640px) { h1 { font-size: 20px; } footer { justify-content: center; } }
 /* ?clean=1 hides the 2D overlay for screen recordings. */
 body[data-clean="1"] header, body[data-clean="1"] main, body[data-clean="1"] footer { display: none; }
+
+body[data-startup] .actions,
+body[data-startup] footer { display: none; }
+body[data-startup="failed"] #scene { display: none; }

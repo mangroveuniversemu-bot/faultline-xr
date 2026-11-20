@@ -6,12 +6,12 @@
 <title>FAULTLINE — The Room That Lies</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body data-phase="DORMANT" data-xr="0">
+<body data-phase="DORMANT" data-xr="0" data-startup="loading">
 <canvas id="scene" aria-label="FAULTLINE scene"></canvas>
 <header>
   <h1>FAULTLINE</h1>
   <p class="sub">The Room That Lies</p>
-  <p id="mode" class="mode">Checking this device…</p>
+  <p id="mode" class="mode" role="status">Loading the 3D scene…</p>
 </header>
 <main>
   <div class="actions">
@@ -19,6 +19,8 @@
     <button id="begin">Play on this screen</button>
   </div>
   <p id="runtime-note" class="note"></p>
+  <p id="startup-fallback" class="note" hidden>Try Quest Browser or a desktop browser with WebGL 2 enabled.</p>
+  <noscript><p class="note">Enable JavaScript to load the 3D scene.</p></noscript>
 </main>
 <footer>
   <div class="status"><strong id="phase">DORMANT</strong> <span id="progress"></span></div>
@@ -30,6 +32,6 @@
     <button id="reset">Reset</button>
   </div>
 </footer>
-<script type="module" src="build/app.js"></script>
+<script type="module" src="startup.js"></script>
 </body>
 </html>
